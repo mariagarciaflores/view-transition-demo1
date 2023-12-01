@@ -1,0 +1,36 @@
+.content {
+  text-align: center;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 1s;
+}
+
+::view-transition-old(root) {
+  animation-name: scaleIn;
+}
+
+::view-transition-new(root) {
+  animation-name: scaleOut;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
