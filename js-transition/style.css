@@ -1,0 +1,12 @@
+::view-transition-new(root) {
+  animation: initial-circle 500ms ease-in;
+}
+
+@keyframes initial-circle {
+  from {
+    clip-path: circle(0px at 50% 36px);
+  }
+  to {
+    clip-path: circle(1287px at 50% 36px);
+  }
+}

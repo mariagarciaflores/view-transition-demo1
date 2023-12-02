@@ -2,7 +2,13 @@
   const button = document.querySelector("#update-btn");
 
   button.addEventListener("click", () => {
-    updateDOM();
+
+    if(!document.startViewTransition) {
+      updateDOM();
+      return;
+    }
+
+    document.startViewTransition(() => updateDOM());
   });
 
   function updateDOM() {
