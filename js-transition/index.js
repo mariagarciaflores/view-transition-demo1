@@ -59,5 +59,12 @@ function showWecomeMessage() {
   //   );
   // });
 
+  for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+      continue;  /* Noncompliant */
+    }
+    alert("i = " + i);
+  }
+
   transition.finished.then(() => alert("La transicion finalizó"));
 }
