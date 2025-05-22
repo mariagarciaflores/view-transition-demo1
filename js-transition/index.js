@@ -5,8 +5,7 @@ addEventListener("click", (event) => {
 });
 
 function updateDOM() {
-  document.querySelector(".content").innerHTML =
-    "<h1>HELLO WORLD! WELCOME TO VIEW TRANSITION API.</h1>";
+  document.querySelector(".content").innerHTML = "<h1>HELLO WORLD! WELCOME TO VIEW TRANSITION API.</h1>";
 }
 
 function showWecomeMessage() {
@@ -20,19 +19,9 @@ function showWecomeMessage() {
   const x = lastClick?.clientX ?? innerWidth / 2;
   const y = lastClick?.clientY ?? innerHeight / 2;
   // Get the distance to the furthest corner
-  const endRadius = Math.hypot(
-    Math.max(x, innerWidth - x),
-    Math.max(y, innerHeight - y)
-  );
+  const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
 
-  console.log(
-    "pointer ",
-    x,
-    y,
-    endRadius,
-    lastClick?.clientX,
-    lastClick?.clientY
-  );
+  console.log("pointer ", x, y, endRadius, lastClick?.clientX, lastClick?.clientY);
 
   // With a transition:
   const transition = document.startViewTransition(() => {
@@ -59,12 +48,17 @@ function showWecomeMessage() {
   //   );
   // });
 
-  for (let i = 0; i < 10; i++) {
+  for (i = 0; i < 10; i++) {
     if (i == 5) {
-      continue;  /* Noncompliant */
+      continue; /* Noncompliant */
     }
     alert("i = " + i);
   }
+
+  const a = Object.assign({}, foo); // Noncompliant: Use spread syntax to clone or merge objects
+  const b = Object.assign({}, foo, bar); // Noncompliant: Use spread syntax to clone or merge objects
+  const c = Object.assign({ foo: 123 }, bar); // Noncompliant: Use spread syntax to clone or merge objects
+  const d = Object.assign({}); // Noncompliant: Use spread
 
   transition.finished.then(() => alert("La transicion finalizó"));
 }
